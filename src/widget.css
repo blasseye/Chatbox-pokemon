@@ -1,0 +1,58 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css');
+@import url('https://fonts.googleapis.com/css?family={{fontName}}');
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+	box-sizing: border-box;
+
+}
+
+body,html {
+    height: 100%;
+    /*font-family: '{{fontName}}', sans-serif;*/
+    font-family: "Press Start 2P", sans-serif;
+    /*font-size: {{fontSize}}px;*/
+    font-size: 12px;
+}
+
+.messages {
+    position: absolute;
+    display: flex;
+    place-items: center;
+    flex-direction: column;
+    inset: 0;
+    top: auto;
+    gap: 0.5rem;
+}
+
+.message {
+    width: 300px;
+    position: relative;
+}
+
+.pkmn-text {
+    letter-spacing: 2.5px;
+    font-size: 15px; /*{{fontSize}}px;*/
+    border: 6px double black;
+    padding: 8px 10px;
+    border-radius: 5px;
+    background:white;
+    line-height: 1.8;
+}
+
+.display-name {
+    text-transform: uppercase;
+}
+
+.display-name img {
+    width: 30px;
+    height: 30px;
+}
+
+.pkmn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    transform: translate(50%, -50%);
+}

@@ -1,0 +1,14 @@
+{
+    "fontName": {
+        "type": "text",
+        "label": "Police d'écriture",
+        "value": "Press Start 2P",
+        "group": "Typographie"
+    },
+    "fontSize": {
+        "type": "number",
+        "label": "Taille (pt)",
+        "value": 24,
+        "group": "Typographie"
+    } 
+}
