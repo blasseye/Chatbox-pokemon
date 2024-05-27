@@ -175,8 +175,12 @@ function addMessage(data, message) {
     const pokemon_url = gifPokemonUrl(data.displayName)
     tchat.insertAdjacentHTML('beforeend', /*html*/`
     <div id="message-${data.msgId}" data-sender="${data.userId}" class="message" style="--color: ${data.displayColor}">
-        <div class="pkmn-text">
-            <p>
+        <div class="pkmn-text"> 
+        <div class="pokeball top-left"></div>
+        <div class="pokeball top-right"></div>
+        <div class="pokeball bottom-left"></div>
+        <div class="pokeball bottom-right"></div>
+        <p>
                 <span class="display-name"></span>:
                 <span class="display-text"></span>
             </p>        
@@ -185,11 +189,24 @@ function addMessage(data, message) {
             <img src=${pokemon_url}>
         </div>
     </div>`);
+
+    // Update the pokeball color
+    const pokeballElements = document.querySelectorAll(`#message-${data.msgId} .pokeball`);
+    pokeballElements.forEach(pokeball => {
+        pokeball.style.setProperty('--pokeball-color', data.displayColor);
+    });
+
+    // Update user badges
     const displayNameElement = document.querySelector(`#message-${data.msgId} .display-name`);
+    const imgElement = document.createElement("img");
+    const imgUrl = pokeballUrl( data.badges)
+    imgElement.src = imgUrl;
+    displayNameElement.appendChild(imgElement);
+    displayNameElement.appendChild(document.createTextNode(data.displayName));
+
     const displayTextElement = document.querySelector(`#message-${data.msgId} .display-text`);
-    // Lancez l'animation de machine à écrire
-    writeNameBadges(data.displayName, data.badges, displayNameElement);
-    typeWriter(message, displayTextElement);
+    typeText(message, displayTextElement, {{animationSpeed}});
+
 }
 
 function removeRow() {
@@ -242,6 +259,19 @@ function pokeballUrl(badges) {
 }
 
 function gifPokemonUrl(display_name) {
+
+    // Hash for string
+    String.prototype.hashCode = function() {
+        var hash = 0,
+        i, chr;
+        if (this.length === 0) return hash;
+        for (i = 0; i < this.length; i++) {
+        chr = this.charCodeAt(i);
+        hash = ((hash << 5) - hash) + chr;
+        hash |= 0; // Convert to 32bit integer
+        }
+        return hash;
+    }
     var date = new Date();
     var nb_pokemon = 905;
     var hash = ("" + date.getDate() + date.getMonth() + date.getFullYear() + display_name).hashCode();
@@ -250,28 +280,7 @@ function gifPokemonUrl(display_name) {
     return url
 }
 
-// Hash for string
-String.prototype.hashCode = function() {
-    var hash = 0,
-    i, chr;
-    if (this.length === 0) return hash;
-    for (i = 0; i < this.length; i++) {
-    chr = this.charCodeAt(i);
-    hash = ((hash << 5) - hash) + chr;
-    hash |= 0; // Convert to 32bit integer
-    }
-    return hash;
-}
-
-function writeNameBadges(name, badges, element) {
-    const imgElement = document.createElement("img");
-    const imgUrl = pokeballUrl(badges)
-    imgElement.src = imgUrl;
-    element.innerHTML = name
-    element.appendChild(imgElement)
-}
-
-function typeWriter(text, element, speed = 50) {
+function typeText(text, element, speed = 50) {
     let i = 0;
     function type() {
         if (i < text.length) {

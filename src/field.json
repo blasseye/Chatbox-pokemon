@@ -1,14 +1,24 @@
 {
-    "fontName": {
-        "type": "text",
-        "label": "Police d'écriture",
-        "value": "Press Start 2P",
-        "group": "Typographie"
-    },
     "fontSize": {
         "type": "number",
         "label": "Taille (pt)",
         "value": 24,
         "group": "Typographie"
-    } 
+    },
+    "displayBadges": {
+        "type": "dropdown",
+        "label": "Display Badges",
+        "value": "inline",
+        "options": {
+          "inline": "Yes",
+          "none": "No"
+        },
+        "group": "Settings"
+      },
+    "animationSpeed": {
+        "type": "number",
+        "label": "Speed",
+        "value": 50,
+        "group": "Settings"
+    }
 }

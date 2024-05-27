@@ -10,10 +10,8 @@
 
 body,html {
     height: 100%;
-    /*font-family: '{{fontName}}', sans-serif;*/
     font-family: "Press Start 2P", sans-serif;
-    /*font-size: {{fontSize}}px;*/
-    font-size: 12px;
+    font-size: {{fontSize}}px;
 }
 
 .messages {
@@ -27,13 +25,13 @@ body,html {
 }
 
 .message {
-    width: 300px;
     position: relative;
+    width: 300px;
 }
 
 .pkmn-text {
+    position: relative;
     letter-spacing: 2.5px;
-    font-size: 15px; /*{{fontSize}}px;*/
     border: 6px double black;
     padding: 8px 10px;
     border-radius: 5px;
@@ -46,8 +44,9 @@ body,html {
 }
 
 .display-name img {
-    width: 30px;
-    height: 30px;
+    display: {{displayBadges}};
+    width: 25px;
+    height: 25px;
 }
 
 .pkmn {
@@ -55,4 +54,149 @@ body,html {
     top: 10px;
     right: 10px;
     transform: translate(50%, -50%);
+}
+
+.pokeball {
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    --pokeball-color: red; /* Default color */
+
+    box-shadow:
+    6px 0 0 black,
+    7px 0 0 black,
+    8px 0 0 black,
+    9px 0 0 black,
+    4px 1px 0 black,
+    5px 1px 0 black,
+    6px 1px 0 var(--pokeball-color),
+    7px 1px 0 var(--pokeball-color),
+    8px 1px 0 var(--pokeball-color),
+    9px 1px 0 var(--pokeball-color),
+    10px 1px 0 black,
+    11px 1px 0 black,
+    3px 2px 0 black,
+    4px 2px 0 var(--pokeball-color),
+    5px 2px 0 var(--pokeball-color),
+    6px 2px 0 white,
+    7px 2px 0 var(--pokeball-color),
+    8px 2px 0 var(--pokeball-color),
+    9px 2px 0 var(--pokeball-color),
+    10px 2px 0 var(--pokeball-color),
+    11px 2px 0 var(--pokeball-color),
+    12px 2px 0 black,
+    3px 3px 0 black,
+    4px 3px 0 var(--pokeball-color),
+    5px 3px 0 white,
+    6px 3px 0 white,
+    7px 3px 0 white,
+    8px 3px 0 var(--pokeball-color),
+    9px 3px 0 var(--pokeball-color),
+    10px 3px 0 var(--pokeball-color),
+    11px 3px 0 var(--pokeball-color),
+    12px 3px 0 black,
+    2px 4px 0 black,
+    3px 4px 0 var(--pokeball-color),
+    4px 4px 0 var(--pokeball-color),
+    5px 4px 0 var(--pokeball-color),
+    6px 4px 0 white,
+    7px 4px 0 var(--pokeball-color),
+    8px 4px 0 var(--pokeball-color),
+    9px 4px 0 var(--pokeball-color),
+    10px 4px 0 var(--pokeball-color),
+    11px 4px 0 var(--pokeball-color),
+    12px 4px 0 var(--pokeball-color),
+    13px 4px 0 black,
+    2px 5px 0 black,
+    3px 5px 0 var(--pokeball-color),
+    4px 5px 0 var(--pokeball-color),
+    5px 5px 0 var(--pokeball-color),
+    6px 5px 0 var(--pokeball-color),
+    7px 5px 0 black,
+    8px 5px 0 black,
+    9px 5px 0 var(--pokeball-color),
+    10px 5px 0 var(--pokeball-color),
+    11px 5px 0 var(--pokeball-color),
+    12px 5px 0 var(--pokeball-color),
+    13px 5px 0 black,
+    2px 6px 0 black,
+    3px 6px 0 black,
+    4px 6px 0 var(--pokeball-color),
+    5px 6px 0 var(--pokeball-color),
+    6px 6px 0 black,
+    7px 6px 0 white,
+    8px 6px 0 gray,
+    9px 6px 0 black,
+    10px 6px 0 var(--pokeball-color),
+    11px 6px 0 var(--pokeball-color),
+    12px 6px 0 black,
+    13px 6px 0 black,
+    2px 7px 0 black,
+    3px 7px 0 white,
+    4px 7px 0 black,
+    5px 7px 0 black,
+    6px 7px 0 black,
+    7px 7px 0 gray,
+    8px 7px 0 gray,
+    9px 7px 0 black,
+    10px 7px 0 black,
+    11px 7px 0 black,
+    12px 7px 0 gray,
+    13px 7px 0 black,
+    3px 8px 0 black,
+    4px 8px 0 white,
+    5px 8px 0 white,
+    6px 8px 0 white,
+    7px 8px 0 black,
+    8px 8px 0 black,
+    9px 8px 0 gray,
+    10px 8px 0 gray,
+    11px 8px 0 gray,
+    12px 8px 0 black,
+    3px 9px 0 black,
+    4px 9px 0 gray,
+    5px 9px 0 white,
+    6px 9px 0 white,
+    7px 9px 0 white,
+    8px 9px 0 gray,
+    9px 9px 0 gray,
+    10px 9px 0 gray,
+    11px 9px 0 gray,
+    12px 9px 0 black,
+    4px 10px 0 black,
+    5px 10px 0 black,
+    6px 10px 0 gray,
+    7px 10px 0 gray,
+    8px 10px 0 gray,
+    9px 10px 0 gray,
+    10px 10px 0 black,
+    11px 10px 0 black,
+    6px 11px 0 black,
+    7px 11px 0 black,
+    8px 11px 0 black,
+    9px 11px 0 black;
+}
+
+.pokeball.top-left {
+    top: -8px;
+    left: -11px;
+    transform: translate(-50%, -50%);
+}
+
+.pokeball.top-right {
+    top: -8px;
+    right: 5px;
+    transform: translate(50%, -50%);
+}
+
+.pokeball.bottom-left {
+    bottom: 3px;
+    left: -11px;
+    transform: translate(-50%, 50%);
+}
+
+.pokeball.bottom-right {
+    bottom: 3px;
+    right: 5px;
+    transform: translate(50%, 50%);
 }
